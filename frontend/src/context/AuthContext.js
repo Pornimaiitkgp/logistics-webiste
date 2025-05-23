@@ -6,7 +6,7 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 // Define the base URL for the backend API from environment variables.
-const BACKEND_URL = "https://logistics-web-backend.onrender.com"
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 // AuthProvider component to wrap your application and provide authentication state
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
