@@ -1,0 +1,355 @@
+/* frontend/src/App.css */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Using Inter font for a modern look */
+  background-color: #eef2f6; /* Light, professional background */
+  color: #333;
+  line-height: 1.6;
+  /* NEW: Subtle 3D-themed background pattern for the body */
+  background-image: url('https://placehold.co/1920x1080/eef2f6/e0e6ed?text=Abstract+Network'); /* Placeholder for an abstract network/grid */
+  background-size: cover;
+  background-attachment: fixed; /* Keeps background fixed during scroll */
+  background-position: center center;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 40px auto; /* More vertical spacing */
+  padding: 30px; /* Increased padding */
+  background-color: #ffffff;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+  overflow: hidden; /* Ensure content respects border-radius */
+  position: relative; /* Needed for pseudo-elements or absolute positioning */
+  z-index: 1; /* Ensure content is above any background effects */
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50; /* Darker, more professional heading color */
+  margin-bottom: 40px; /* More space below heading */
+  font-size: 2.5em; /* Larger heading */
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px; /* More padding */
+  border-bottom: 2px solid #e0e6ed; /* Stronger separator */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8em; /* Adjusted for header context */
+  color: #2c3e50;
+}
+
+.header p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #5a6a7a; /* Softer text color */
+  font-weight: 500;
+}
+
+.logout-button,
+.history-button,
+.export-button { /* Grouping common button styles */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px; /* Consistent rounded corners */
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle button shadow */
+}
+
+.logout-button {
+  background-color: #e74c3c; /* Alert red */
+  color: white;
+  margin-left: 15px; /* Increased spacing */
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.history-button {
+  background-color: #2ecc71; /* Success green */
+  color: white;
+}
+
+.history-button:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.export-button {
+  background-color: #3498db; /* Information blue */
+  color: white;
+  margin-top: 25px; /* More space above export button */
+}
+
+.export-button:hover:not(:disabled) {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.export-button:disabled {
+  background-color: #bdc3c7; /* Lighter grey for disabled */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+.file-upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Increased gap */
+  margin-bottom: 40px; /* More space below form */
+  padding: 30px; /* Increased padding */
+  background-color: #f8fbfd; /* Very light blue background */
+  border: 1px solid #e0e6ed;
+  border-radius: 10px; /* Consistent rounded corners */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+  /* NEW: Subtle 3D-like pattern for the form background */
+  background-image: url('https://placehold.co/600x400/f8fbfd/e0e6ed?text=Geometric+Pattern'); /* Placeholder for a subtle geometric pattern */
+  background-size: 150px;
+  background-repeat: repeat;
+  background-blend-mode: overlay; /* Blend with background color */
+}
+
+.file-upload-form h2 {
+  margin-top: 0;
+  color: #34495e; /* Darker heading */
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.file-input {
+  padding: 12px; /* Increased padding */
+  border: 1px solid #c0d0e0;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 350px; /* Slightly wider input */
+  background-color: #ffffff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Blue glow on focus */
+  outline: none;
+}
+
+/* General button style for the form submit button */
+.file-upload-form button {
+  padding: 15px 30px; /* Larger button */
+  font-size: 1.1em;
+  font-weight: 700;
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* More prominent shadow */
+}
+
+.file-upload-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.file-upload-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+.error-message {
+  color: #c0392b; /* Darker red for errors */
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fdeded; /* Light red background */
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.results-container {
+  background-color: #e6f7ff;
+  border: 1px solid #b3e0ff;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 40px;
+  text-align: center;
+  /* NEW: Subtle 3D-like pattern for the results background */
+  background-image: url('https://placehold.co/600x400/e6f7ff/cceeff?text=Circuit+Board'); /* Placeholder for a circuit board pattern */
+  background-size: 200px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+
+.results-container h2 {
+  color: #2980b9; /* Blue heading */
+  margin-bottom: 25px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.results-table-container {
+  overflow-x: auto;
+  margin-top: 25px;
+  border-radius: 8px; /* Rounded table container */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Table shadow */
+}
+
+table {
+  width: 100%;
+  border-collapse: separate; /* Allows border-radius on cells */
+  border-spacing: 0; /* Remove default spacing */
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures rounded corners */
+}
+
+table th, table td {
+  border: 1px solid #e0e6ed; /* Lighter border */
+  padding: 15px; /* More padding for readability */
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.95em;
+}
+
+table th {
+  background-color: #d9edf7; /* Light blue header */
+  color: #2c3e50;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f8fbfd; /* Lighter zebra striping */
+}
+
+table tbody tr:hover {
+  background-color: #eef7ff; /* Hover effect for rows */
+  transition: background-color 0.2s ease;
+}
+
+.backward {
+  color: #e74c3c; /* Stronger red */
+  font-weight: bold;
+}
+
+.forward {
+  color: #27ae60; /* Stronger green */
+  font-weight: bold;
+}
+
+/* --- Authentication Page Styles --- */
+.auth-container {
+  max-width: 450px; /* Slightly wider */
+  margin: 80px auto; /* More vertical spacing */
+  padding: 40px; /* More padding */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  text-align: center;
+  /* NEW: Subtle 3D-like pattern for auth container */
+  background-image: url('https://placehold.co/600x400/ffffff/f0f4f7?text=Data+Flow'); /* Placeholder for data flow pattern */
+  background-size: 100px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+
+.auth-container h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap */
+  margin-bottom: 25px;
+}
+
+.auth-form input {
+  padding: 15px; /* More padding */
+  border: 1px solid #c0d0e0;
+  border-radius: 8px;
+  font-size: 1.1em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.25);
+  outline: none;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.auth-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.auth-container p {
+  margin-top: 25px;
+  font-size: 1em;
+  color: #666;
+}
+
+.auth-container a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+.no-results {
+  text-align: center;
+  color: #7f8c8d; /* Softer grey */
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 1.1em;
+  padding: 15px;
+  background-color: #f0f4f7;
+  border-radius: 8px;
+  border: 1px dashed #d0d8e0;
+}
+
+.loading-full-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5em; /* Larger loading text */
+  color: #007bff;
+  font-weight: 600;
+}
