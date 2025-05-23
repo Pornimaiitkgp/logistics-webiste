@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext'; // Import useAuth hook
 import { useNavigate } from 'react-router-dom'; // For navigation
 
 // Define the base URL for the backend API from environment variables.
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = "https://logistics-web-backend.onrender.com"
 
 function HistoryPage() {
   const { logout } = useAuth(); // Get logout function
